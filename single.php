@@ -33,6 +33,40 @@
 					</li>
 				</ul>
 			</div>
+			
+			<!--  Related Posts
+			============================================================ -->
+			
+			<div class="uk-section uk-section-xsmall uk-margin-medium">
+				<?php $tags = wp_get_post_tags($post->ID); if ($tags) { $tag_ids = array(); foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id; $args=array(
+			    'tag__in' => $tag_ids,
+			    'post__not_in' => array($post->ID),
+			    'showposts'=>3, // Number of related posts that will be shown.
+			    'caller_get_posts'=>1
+			    ); $my_query = new wp_query($args); ?>
+						<?php if( $my_query->have_posts() ) { ?>
+							<h3 class="uk-h3">Похожие записи:</h3>
+							<ul class="uk-child-width-1-3@s" uk-grid>
+								<?php while ($my_query->have_posts()) { $my_query->the_post(); ?>
+						      <li>
+						        <div class="uk-card uk-card-small uk-background-muted">
+							        <?php if ( '' !== get_the_post_thumbnail() ) : ?>
+							        	<div class="uk-card-media-top">
+												  <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail-post', ['uk-img' => '']); ?></a>
+							        	</div>
+											<?php endif; ?>
+							        <div class="uk-card-body">
+						            <?php the_title( '<h2 class="uk-card-title"><a class="uk-link-reset" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+							        </div>
+						        </div>
+						      </li>
+								<?php } ?>
+					    </ul>
+					  <?php } ?>
+				<?php }?>
+			</div>
+			
+			<hr class="uk-hr">
 		  
 		  <!--  Comments
 			============================================================ -->
