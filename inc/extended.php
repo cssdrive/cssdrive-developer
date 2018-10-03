@@ -11,14 +11,14 @@ add_filter( "the_excerpt", "add_class_to_excerpt" );
 
 // Изменить текст ссылки
 function modify_read_more_link() {
-  return '<a class="more-link" href="' . get_permalink() . '">Your Read More Link Text</a>';
+  return '<div class="uk-margin"><a class="more-link" href="' . get_permalink() . '"> ' . __( 'Read the full article...', 'cssdrive' ). '</a></div>';
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 
 // Заменяет текст фрагмента «Читать дальше» по ссылке
 function new_excerpt_more($more) {
   global $post;
-	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a>';
+	return '<div class="uk-margin"><a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a></div>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -37,7 +37,7 @@ function add_custom_logo() {
   $html = sprintf( '<a href="%1$s" class="uk-navbar-item uk-logo" rel="home" itemprop="url">%2$s</a>',
     esc_url( esc_url( home_url( '/' ) ) ),
     wp_get_attachment_image( $custom_logo_id, 'full', false, array(
-      'class'    => 'custom-logo',
+      'class' => 'custom-logo',
     ) )
   );
   return $html;   
