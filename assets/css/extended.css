@@ -1,0 +1,87 @@
+/*  Настройки адптации верстки сайта
+============================================================*/
+
+@media (max-width: 959px) {
+
+}
+@media (max-width: 639px) {
+
+}
+
+/*  Добавление рамки в лагине "Reading Time WP"
+============================================================*/
+
+.rt-reading-time {
+	border: 1px dashed #ccc;
+	margin-bottom: 15px;
+	padding: 5px 10px;
+}
+
+/*  Текст предназначен только для чтения с экрана.
+============================================================*/
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/*  Скрываем стандартную кнопку "Оиправить комментарий"
+============================================================*/
+
+.form-submit {
+  display: none;
+}
+
+/*  Настраиваем отступы "Добавить новость" ACF формы
+============================================================*/
+
+.acf-fields > .acf-field {
+  position: relative;
+  margin: 0;
+  padding: 15px 0 !important;
+  border-top: none !important;
+  border-top-width: 0 !important;
+}
+
+/* Переключатель разделенного поста на страницы
+============================================================*/
+
+.page-links > .uk-button-default {
+	background: #1e87f0;
+	border-color: #1e87f0;
+	color: #ffffff;
+}
+
+/* Меняем расположение подписи на картинки
+============================================================*/
+
+figcaption {
+	text-align: left !important;
+	color: #c5c5c5 !important;
+}
