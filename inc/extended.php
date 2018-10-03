@@ -49,7 +49,7 @@ add_filter( 'get_custom_logo', 'add_custom_logo' );
 
 function true_new_post_pass_form() {
 	return '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-	  <p class="uk-margin">Запись защищена. Для получения пароля обратитесь к администратору.</p>
+	  <div class="uk-margin-top">Запись защищена. Для получения пароля обратитесь к администратору.</div>
 	  <ul class="uk-grid-small uk-margin" uk-grid>
       <li class="uk-width-expand@s">
         <input class="uk-input" name="post_password" type="password" placeholder="Пароль к записи" />
