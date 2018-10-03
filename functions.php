@@ -13,7 +13,11 @@ function cssdrive_setup() {
 
 	register_nav_menus(array(
 		'top'    => __( 'Top Menu', 'cssdrive' ),
-	));		
+	));
+	
+	add_theme_support('post-formats', array(
+		'image',
+	));
 }
 add_action( 'after_setup_theme', 'cssdrive_setup' );
 
