@@ -2,35 +2,35 @@
 
 <div id="wrap" class="uk-grid-large" uk-grid>
 	
-	<!--  Main Content
+  <!--  Main Content
   ============================================================ -->
   
-	<main id="main" class="uk-width-expand@m">
-		<?php if ( have_posts() ) : ?>
+  <main id="main" class="uk-width-expand@m">
+    <?php if ( have_posts() ) : ?>
 			
-			<!--  Content
+      <!--  Content
       ============================================================ -->
       
-			<?php while ( have_posts() ) : the_post(); ?>		    
-			  <?php get_template_part( 'parts/content', get_post_format() ); ?>		  
-			<?php endwhile; ?>
+      <?php while ( have_posts() ) : the_post(); ?>		    
+        <?php get_template_part( 'parts/content', get_post_format() ); ?>		  
+      <?php endwhile; ?>
+		
+      <?php pagination(); ?>
+		
+      <?php else : ?>
 			
-			<?php pagination(); ?>
-			
-		<?php else : ?>
-			
-			<!--  Empty Content
+      <!--  Empty Content
       ============================================================ -->
       
-			<?php get_template_part( 'parts/content', 'none' ); ?>
+      <?php get_template_part( 'parts/content', 'none' ); ?>
 			
-	  <?php endif; ?>
-	</main>
+    <?php endif; ?>
+  </main>
 	
-	<!--  Sidebar
-	============================================================ -->
+  <!--  Sidebar
+  ============================================================ -->
 	
-	<?php get_sidebar(); ?>
+  <?php get_sidebar(); ?>
 	
 </div><!-- #wrap -->
 
