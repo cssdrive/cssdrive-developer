@@ -92,3 +92,11 @@ blockquote > cite {
 	font-size: 16px;
 	font-style: normal;
 }
+
+/* Сдвигаем иконки UiKit немного вверх
+============================================================*/
+
+.uk-icon {
+	position: relative;
+	top: -1px;
+}
