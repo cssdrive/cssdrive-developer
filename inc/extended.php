@@ -11,14 +11,14 @@ add_filter( "the_excerpt", "add_class_to_excerpt" );
 
 // Изменить текст ссылки
 function modify_read_more_link() {
-  return '<div class="uk-margin"><a class="more-link" href="' . get_permalink() . '"> ' . __( 'Read the full article...', 'cssdrive' ). '</a></div>';
+  return '<div class="uk-margin"><a class="more-link" href="' . get_permalink() . '"> ' . __( 'Read the full article...', 'cssdrive' ) . '</a></div>';
 }
 add_filter( 'the_content_more_link', 'modify_read_more_link' );
 
 // Заменяет текст фрагмента «Читать дальше» по ссылке
 function new_excerpt_more($more) {
   global $post;
-	return '<div class="uk-margin"><a class="moretag" href="'. get_permalink($post->ID) . '"> Read the full article...</a></div>';
+	return '<div class="uk-margin"><a class="moretag" href="'. get_permalink($post->ID) . '"> ' . __( 'Read the full article...', 'cssdrive' ) . '</a></div>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
