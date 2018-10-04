@@ -3,7 +3,7 @@
   
 <article id="post-<?php the_ID(); ?>" <?php post_class('uk-article uk-margin'); ?>>
 	
-	<?php the_title( '<h1 class="uk-h2 uk-article-title"><a class="uk-link-reset" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+	<?php the_title( '<h1 class="uk-h2 uk-article-title">', '</h1>' ); ?>
 	
 	<?php the_content(); ?>
 
