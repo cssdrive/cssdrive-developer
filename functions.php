@@ -12,7 +12,14 @@ function cssdrive_setup() {
 	add_theme_support( 'align-wide' );
 
 	register_nav_menus(array(
-		'top'    => __( 'Top Menu', 'cssdrive' ),
+		'top' => __( 'Top Menu', 'cssdrive' ),
+	));
+	
+	add_theme_support('html5', array(
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
 	));
 	
 	add_theme_support('post-formats', array(
