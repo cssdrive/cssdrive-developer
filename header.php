@@ -64,23 +64,19 @@
 <!--  Offcanvas
 ============================================================ -->
 
-<div id="offcanvas-menu" uk-offcanvas="overlay: true;">	
-  <div class="uk-offcanvas-bar">	
-		<button class="uk-offcanvas-close" type="button" uk-close></button>
-
-    <div class="uk-margin">
-      <?php wp_nav_menu( array(
-				'theme_location'  => 'top',
-			  'menu_id'         => 'top',
-				'container'       => '',
-				'menu_class'      => 'uk-nav uk-nav-primary uk-margin-auto-vertical uk-nav-parent-icon',
-				'link_before'     => '<span>',
-				'link_after'      => '</span>',
-				'items_wrap'      => '<ul id="%1$s" class="%2$s" uk-nav>%3$s</ul>',
-				'fallback_cb'     => 'offcanvas::fallback',
-				'walker'          => new offcanvas('navbar'),
-				)); ?>
-    </div>  
+<div id="offcanvas-menu" uk-offcanvas="overlay: true; flip: true;">	
+  <div class="uk-offcanvas-bar">
+    <?php wp_nav_menu( array(
+			'theme_location'  => 'top',
+		  'menu_id'         => 'top',
+			'container'       => '',
+			'menu_class'      => 'uk-nav uk-nav-primary uk-nav-parent-icon',
+			'link_before'     => '<span>',
+			'link_after'      => '</span>',
+			'items_wrap'      => '<ul id="%1$s" class="%2$s" uk-nav>%3$s</ul>',
+			'fallback_cb'     => 'offcanvas::fallback',
+			'walker'          => new offcanvas('navbar'),
+			)); ?>
   </div>
 </div><!-- #offcanvas-menu -->
 
