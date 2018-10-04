@@ -76,7 +76,7 @@
 			'items_wrap'      => '<ul id="%1$s" class="%2$s" uk-nav>%3$s</ul>',
 			'fallback_cb'     => 'offcanvas::fallback',
 			'walker'          => new offcanvas('navbar'),
-			)); ?>
+		));?>
   </div>
 </div><!-- #offcanvas-menu -->
 
