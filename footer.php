@@ -3,7 +3,7 @@
 <!--  Footer
 ============================================================ -->
 
-<footer id="footer">	
+<footer id="footer" role="contentinfo">	
 	<div class="uk-section uk-section-xsmall uk-section-muted">
 		<div class="uk-container uk-text-center uk-text-meta">
 		  

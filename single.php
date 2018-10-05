@@ -4,7 +4,7 @@
 	<!-- Main Single
   ============================================================ --> 
   
-	<main id="main" class="uk-width-expand@m">
+	<main id="main" class="uk-width-expand@m" role="main">
 		<?php while ( have_posts() ) :the_post(); ?>
 			
 			<!--  Content Single

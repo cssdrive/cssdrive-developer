@@ -5,7 +5,7 @@
 	<!--  Main Content
   ============================================================ -->
   
-	<main id="main" class="uk-width-expand@m">
+	<main id="main" class="uk-width-expand@m" role="main">
 		<?php if ( have_posts() ) : ?>
 			
 			<!--  Content

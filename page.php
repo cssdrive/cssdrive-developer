@@ -3,7 +3,7 @@
   <!--  Main Page
   ============================================================ -->
  
-	<main id="main">
+	<main id="main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 

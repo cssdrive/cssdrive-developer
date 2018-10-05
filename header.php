@@ -12,12 +12,12 @@
 <!--  Header
 ============================================================ -->
 
-<header id="header" class="uk-background-primary uk-light">
+<header id="header" class="uk-background-primary uk-light" role="banner">
 	
 	<!-- Navigation
 	============================================================ -->
 	
-	<nav id="navigation" class="uk-navbar-container uk-navbar-transparent">
+	<nav id="navigation" class="uk-navbar-container uk-navbar-transparent" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'cssdrive' ); ?>">
 		<div class="uk-container" uk-navbar>
 	  
 		  <div class="nav-overlay uk-navbar-left">
