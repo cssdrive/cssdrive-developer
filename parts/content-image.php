@@ -15,7 +15,7 @@
 		<?php }	?>
 		
     <div class="uk-overlay uk-overlay-secondary uk-position-bottom">       
-      <?php $categories = get_the_category(); if($categories){ foreach($categories as $category) { $out .= '<a class="uk-button uk-button-default uk-border-rounded" href="'.get_category_link($category->term_id ).'">' . $category->name . '</a> '; } echo trim($out, ', '); } ?>
+      <?php $categories = get_the_category(); if($categories){ foreach($categories as $category) { $out .= '<a class="uk-button uk-button-default uk-border-rounded uk-visible@s" href="'.get_category_link($category->term_id ).'">' . $category->name . '</a> '; } echo trim($out, ', '); } ?>
 
       <?php the_title( '<h2 class="uk-h2 uk-article-title uk-margin-small-top"><a class="uk-link-reset" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
       
