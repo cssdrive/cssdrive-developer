@@ -5,7 +5,7 @@
  */
 get_header(); ?>
 
-  <!--  Main Page Add
+  <!--  Main Page Add Post
   ============================================================ -->
  
 	<main id="main" role="main">
