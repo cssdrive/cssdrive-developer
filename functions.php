@@ -32,13 +32,14 @@ add_action( 'after_setup_theme', 'cssdrive_setup' );
 ============================================================*/
 
 function cssdrive_scripts() {
-	wp_enqueue_style( 'uikit', get_theme_file_uri( '/assets/uikit/css/uikit.min.css' ), false, '3.0.0-rc.17', 'all' );
+	wp_enqueue_style( 'uikit', get_theme_file_uri( '/assets/css/uikit.min.css' ), false, '3.0.0-rc.17', 'all' );
 	wp_enqueue_style( 'extended', get_theme_file_uri( '/assets/css/extended.css' ), false, '', 'all' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
-	wp_enqueue_script( 'uikit', get_theme_file_uri() . '/assets/uikit/js/uikit.min.js', array( 'jquery' ), '3.0.0-rc.17', true );
-	wp_enqueue_script( 'uikit-icons', get_theme_file_uri() . '/assets/uikit/js/uikit-icons.min.js', array( 'jquery' ), '3.0.0-rc.17', true );
-	
+	wp_enqueue_script( 'uikit', get_theme_file_uri() . '/assets/js/uikit.min.js', array( 'jquery' ), '3.0.0-rc.17', true );
+	wp_enqueue_script( 'uikit-icons', get_theme_file_uri() . '/assets/js/uikit-icons.min.js', array( 'jquery' ), '3.0.0-rc.17', true );
+
+	// Настройка для комментариев
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -63,3 +64,6 @@ require get_parent_theme_file_path( '/inc/pagination.php' );
 
 // Расширения и дополнения к стандартным функциям WordPress
 require get_parent_theme_file_path( '/inc/extended.php' );
+
+// Компоненты для расширения функционала
+require get_parent_theme_file_path( '/conponents/owl.carousel/owl.carousel.php' );
