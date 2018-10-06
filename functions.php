@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined( 'ABSPATH' ) ) { exit; }
 	
 /*  Setup
 ============================================================*/
@@ -66,4 +66,4 @@ require get_parent_theme_file_path( '/inc/pagination.php' );
 require get_parent_theme_file_path( '/inc/extended.php' );
 
 // Компоненты для расширения функционала
-require get_parent_theme_file_path( '/conponents/owl.carousel/owl.carousel.php' );
+require get_parent_theme_file_path( '/inc/owl.carousel/owl.carousel.php' );
