@@ -1439,7 +1439,7 @@ if (typeof Object.create !== "function") {
 
     $.fn.owlCarousel.options = {
 
-        items : 6,
+        items : 5,
         itemsCustom : false,
         itemsDesktop : [1199, 4],
         itemsDesktopSmall : [979, 3],
@@ -1471,11 +1471,11 @@ if (typeof Object.create !== "function") {
         baseClass : "owl-carousel",
         theme : "owl-theme",
 
-        lazyLoad : false,
+        lazyLoad : true,
         lazyFollow : true,
         lazyEffect : "fade",
 
-        autoHeight : false,
+        autoHeight : true,
 
         jsonPath : false,
         jsonSuccess : false,
@@ -1515,7 +1515,7 @@ if (typeof Object.create !== "function") {
       });
      
       sync2.owlCarousel({
-        items : 6,
+        items : 5,
         itemsDesktop      : [1199,6],
         itemsDesktopSmall : [979,5],
         itemsTablet       : [768,4],

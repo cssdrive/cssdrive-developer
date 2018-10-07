@@ -67,3 +67,5 @@ require get_parent_theme_file_path( '/inc/extended.php' );
 
 // Компоненты для расширения функционала
 require get_parent_theme_file_path( '/inc/owl.carousel/owl.carousel.php' );
+
+add_filter('the_category_list', 'category_flags');
