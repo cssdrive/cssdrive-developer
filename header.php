@@ -84,3 +84,10 @@
 ============================================================ -->
 
 <div id="container" class="uk-section uk-section-small uk-container" uk-height-viewport="expand: true">
+	
+	<!-- Breadcrumb
+	============================================================ -->
+	
+	<ul class="uk-breadcrumb">
+		<?php cssd_breadcrumb(); ?> <!-- Желательно заменить на Yoast SEO Breadcrumb -->
+	</ul>
