@@ -9,13 +9,22 @@
   text-align: center;
 }
 #sync2 .item{
-  margin: 0 5px;
+
   cursor: pointer;
   border: 5px solid #eeeeee;
 }
 
 #sync2 .synced .item{
-  border: 5px solid #ff9900;
+  border: 5px solid #1e87f0;
+}
+
+@media (max-width: 639px) {
+  #sync2 .item{
+	  border: 3px solid #eeeeee;
+	}
+	#sync2 .synced .item{
+	  border: 3px solid #1e87f0;
+	}
 }
 
 

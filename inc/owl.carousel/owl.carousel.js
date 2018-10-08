@@ -1471,11 +1471,11 @@ if (typeof Object.create !== "function") {
         baseClass : "owl-carousel",
         theme : "owl-theme",
 
-        lazyLoad : true,
+        lazyLoad : false,
         lazyFollow : true,
         lazyEffect : "fade",
 
-        autoHeight : true,
+        autoHeight : false,
 
         jsonPath : false,
         jsonSuccess : false,
