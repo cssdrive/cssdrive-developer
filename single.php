@@ -34,8 +34,6 @@
 				</ul>
 			</div>
 			
-			<hr class="uk-hr">
-			
 			<!--  Last Post Category
 			============================================================ -->
 			
@@ -53,8 +51,9 @@
 					'caller_get_posts'=>1);
 					$my_query = new wp_query($args);
 					if( $my_query->have_posts() ) {
+					echo '<hr class="uk-hr">';
 					echo '<h3>Похожие записи по категориям:</h3>';
-					echo '<ul class="uk-child-width-1-3 uk-grid-small uk-grid-match" uk-grid>';
+					echo '<ul class="uk-child-width-1-3@s uk-grid-small uk-grid-match" uk-grid>';
 					while ($my_query->have_posts()) {
 					$my_query->the_post();
 					?>
@@ -81,14 +80,11 @@
 				?>
 			</div>
 			
-			<hr class="uk-hr">
-			
 			<!--  Last Post Tags
 			============================================================ -->
 			
 			<div class="uk-margin-medium">
-				<h3>Похожие записи по тегам:</h3>
-					<?php $tags = wp_get_post_tags($post->ID);
+				<?php $tags = wp_get_post_tags($post->ID);
 					if ($tags) {
 					$tag_ids = array();
 					foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
@@ -101,7 +97,9 @@
 					);
 					$my_query = new wp_query($args);
 					if( $my_query->have_posts() ) {
-					echo '<ul class="uk-child-width-1-3 uk-grid-small uk-grid-match" uk-grid>';
+					echo '<hr class="uk-hr">';
+					echo '<h3>Похожие записи по тегам:</h3>';
+					echo '<ul class="uk-child-width-1-3@s uk-grid-small uk-grid-match" uk-grid>';
 					while ($my_query->have_posts()) {
 					$my_query->the_post();
 					?>
