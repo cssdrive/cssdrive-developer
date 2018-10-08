@@ -9,7 +9,7 @@
 		<li><span uk-icon="icon: calendar"></span> <?php the_time('d.m.Y'); ?></li>
 		<li><span uk-icon="icon: user"></span> <a class="uk-text-meta" href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php the_author(); ?></a></li>
 		<li><span uk-icon="icon: comments"></span> <a class="uk-text-meta" href="<?php the_permalink() ?>#comments"><?php comments_number('Добавить комментарий', '1 Комментарий', '% Комментария'); ?></a></li>
-		<li><?php printf(__('<span uk-icon="icon: bookmark"></span> %s', 'cssdrive'), get_the_category_list(', ')); ?></li>
+		<li><?php foreach((get_the_category()) as $category) {  echo '<span uk-icon="icon: bookmark"></span> <a class="uk-text-meta" href="'.get_category_link($category->cat_ID).'" title="'.$category->cat_name.'">'.$category->cat_name.'</a> '; } ?></li>
 	</ul>
 	
 	<?php the_content(); ?>
