@@ -5,7 +5,13 @@
 
 }
 @media (max-width: 639px) {
-
+	.uk-article-title,
+	.uk-card-title {
+		font-size: 18px !important;
+	}
+	.uk-overlay {
+		padding: 15px;
+	}
 }
 
 /*  Текст предназначен только для чтения с экрана.
