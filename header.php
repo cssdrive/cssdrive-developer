@@ -88,6 +88,8 @@
 	<!-- Breadcrumb
 	============================================================ -->
 	
-	<ul class="uk-breadcrumb">
-		<?php cssd_breadcrumb(); ?> <!-- Желательно заменить на Yoast SEO Breadcrumb -->
-	</ul>
+	<?php if ( is_front_page() || is_home() ) : else : ?>
+		<ul class="uk-breadcrumb">
+			<?php cssd_breadcrumb(); ?> <!-- Желательно заменить на Yoast SEO Breadcrumb -->
+		</ul>
+	<?php endif; ?>
