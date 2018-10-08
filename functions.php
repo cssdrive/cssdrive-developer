@@ -39,8 +39,8 @@ function cssdrive_scripts() {
 	wp_enqueue_style( 'extended', get_theme_file_uri( '/assets/css/extended.css' ), false, '', 'all' );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
-	wp_enqueue_script( 'uikit', get_theme_file_uri() . '/assets/js/uikit.min.js', array( 'jquery' ), '3.0.0-rc.17', true );
-	wp_enqueue_script( 'uikit-icons', get_theme_file_uri() . '/assets/js/uikit-icons.min.js', array( 'jquery' ), '3.0.0-rc.17', true );
+	wp_enqueue_script( 'uikit', get_theme_file_uri() . '/assets/js/uikit.min.js', array( 'jquery' ), '3.0.0-rc.17', false );
+	wp_enqueue_script( 'uikit-icons', get_theme_file_uri() . '/assets/js/uikit-icons.min.js', array( 'jquery' ), '3.0.0-rc.17', false );
 
 	// Настройка для комментариев
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
