@@ -35,6 +35,100 @@
 			</div>
 			
 			<hr class="uk-hr">
+			
+			<!--  Last Post Category
+			============================================================ -->
+			
+			<div class="uk-margin-medium">
+				<?php
+					$categories = get_the_category($post->ID);
+					if ($categories) {
+					$category_ids = array();
+					foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+					$args=array(
+					'category__in' => $category_ids,
+					'post__not_in' => array($post->ID),
+					'showposts'=>3,
+					'orderby'=>rand,
+					'caller_get_posts'=>1);
+					$my_query = new wp_query($args);
+					if( $my_query->have_posts() ) {
+					echo '<h3>Похожие записи по категориям:</h3>';
+					echo '<ul class="uk-child-width-1-3 uk-grid-small uk-grid-match" uk-grid>';
+					while ($my_query->have_posts()) {
+					$my_query->the_post();
+					?>
+					<li>
+						<div class="uk-card uk-background-muted uk-card-small">
+							<div class="uk-card-media-top">
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+									<?php the_post_thumbnail(); ?>
+								</a>
+							</div>
+							<div class="uk-card-body">
+								<h3 class="uk-card-title">
+									<a class="uk-link-text" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+								</h3>
+							</div>
+						</div>
+					</li>
+					<?php
+					}
+					echo '</ul>';
+					}
+					wp_reset_query();
+					}
+				?>
+			</div>
+			
+			<hr class="uk-hr">
+			
+			<!--  Last Post Tags
+			============================================================ -->
+			
+			<div class="uk-margin-medium">
+				<h3>Похожие записи по тегам:</h3>
+					<?php $tags = wp_get_post_tags($post->ID);
+					if ($tags) {
+					$tag_ids = array();
+					foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+					$args=array(
+					'tag__in' => $tag_ids,       
+					'orderby'=>rand,                
+					'caller_get_posts'=>1,            
+					'post__not_in' => array($post->ID),
+					'showposts'=>3                      
+					);
+					$my_query = new wp_query($args);
+					if( $my_query->have_posts() ) {
+					echo '<ul class="uk-child-width-1-3 uk-grid-small uk-grid-match" uk-grid>';
+					while ($my_query->have_posts()) {
+					$my_query->the_post();
+					?>
+					<li>
+						<div class="uk-card uk-background-muted uk-card-small">
+							<div class="uk-card-media-top">
+								<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
+									<?php the_post_thumbnail(); ?>
+								</a>
+							</div>
+							<div class="uk-card-body">
+								<h3 class="uk-card-title">
+									<a class="uk-link-text" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+								</h3>
+							</div>
+						</div>
+					</li>
+					<?php
+					}
+					echo '</ul>';
+					}
+					wp_reset_query();
+					}
+				?>
+			</div>
+			
+			<hr class="uk-hr">
 		  
 		  <!--  Comments
 			============================================================ -->
