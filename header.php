@@ -90,7 +90,7 @@
 		<!-- Breadcrumb
 		============================================================ -->
 	
-		<ul class="uk-breadcrumb">
+		<ul class="uk-grid-divider uk-text-small uk-grid-small" uk-grid>
 			<?php cssd_breadcrumb(); ?> <!-- Желательно заменить на Yoast SEO Breadcrumb -->
 		</ul>
 		
