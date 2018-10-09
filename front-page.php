@@ -18,6 +18,14 @@
 	    <h2 class="uk-h2">Вывод последних постов</h2>
 	    <?php get_template_part( 'components/primary-post' ); ?>
     </div>
+    
+    <!--  Visible Last Post
+    ============================================================ -->
+    
+    <div class="uk-margin-large-top">
+	    <h2 class="uk-h2">Скрывающиеся блоки последних постов</h2>
+	    <?php get_template_part( 'components/visible-post' ); ?>
+    </div>
 
 	</main><!-- #main -->
 
