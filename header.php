@@ -50,7 +50,7 @@
 		  <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
 		      <div class="uk-navbar-item uk-width-expand">
 		        <form role="search" method="get" class="uk-search uk-search-navbar uk-width-1-1" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		          <input class="uk-search-input" type="search" value="<?php echo get_search_query(); ?>" name="search" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'cssdrive' ); ?>" autofocus>
+		          <input class="uk-search-input" type="search" value="<?php echo get_search_query(); ?>" name="s" placeholder="<?php echo esc_attr_x( 'Search&hellip;', 'placeholder', 'cssdrive' ); ?>" autofocus>
 		        </form>	
 		      </div>
 		      <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
