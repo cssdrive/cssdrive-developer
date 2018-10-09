@@ -1,3 +1,7 @@
+/*
+ * http://merritt-wellness.com/demos/sync.html
+*/
+
 if (typeof Object.create !== "function") {
     Object.create = function (obj) {
         function F() {}
