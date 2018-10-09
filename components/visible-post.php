@@ -1,4 +1,4 @@
-<?php query_posts(array('orderby' => 'rand', 'cat' => '0,1,2,3', 'showposts' => 5)); ?>
+<?php query_posts(array('orderby' => 'rand', 'cat' => '0', 'showposts' => 5)); ?>
 <?php $counter = 0; ?>
 <?php if ( have_posts() ) : ?>
 <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l uk-child-width-1-5@xl uk-grid-small uk-grid-match" uk-grid>
