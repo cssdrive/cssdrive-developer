@@ -26,6 +26,14 @@
 	    <h2 class="uk-h2">Скрывающиеся блоки последних постов</h2>
 	    <?php get_template_part( 'components/visible-post' ); ?>
     </div>
+    
+    <!--  ADV Last Post
+    ============================================================ -->
+    
+    <div class="uk-margin-large-top">
+	    <h2 class="uk-h2">Реклама в ленте последних постов</h2>
+	    <?php get_template_part( 'components/adv-post' ); ?>
+    </div>
 
 	</main><!-- #main -->
 
