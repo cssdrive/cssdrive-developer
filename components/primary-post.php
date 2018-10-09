@@ -41,7 +41,7 @@
 						<?php endif; ?>
 					</div>
 					<div class="uk-card-body">
-						<?php the_title( '<h2 class="uk-card-title"><a class="uk-link-reset" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
+						<?php the_title( '<h2 class="uk-h5"><a class="uk-link-reset" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
 					</div>
 				</div>
 				
