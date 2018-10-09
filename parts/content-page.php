@@ -14,4 +14,6 @@
 		'link_after'  => '</span>',
 	));?>
 	
+	<?php edit_post_link( __( 'Edit', 'cssdrive' ), '', '', null, 'uk-button uk-button-small uk-button-default' ); ?>
+	
 </article><!-- #post-## -->
