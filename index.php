@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="wrap" class="uk-grid-large" uk-grid>
+<div id="wrap" uk-grid>
 	
 	<!--  Main Content
   ============================================================ -->
