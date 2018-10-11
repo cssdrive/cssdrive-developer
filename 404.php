@@ -2,7 +2,7 @@
 
 <div id="wrap">
 	
-  404!sfverfe3
+	404!
 	
 </div><!-- #wrap -->
 

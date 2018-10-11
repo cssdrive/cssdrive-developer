@@ -2,7 +2,7 @@
 
 <div id="wrap">
 	
-	Поиск!
+	Поиск!efv
 	
 </div><!-- #wrap -->
 

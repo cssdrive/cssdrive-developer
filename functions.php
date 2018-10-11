@@ -23,6 +23,7 @@ function cssdrive_setup() {
 		'comment-list',
 		'gallery',
 		'caption',
+		
 	));
 	
 	add_theme_support('post-formats', array(
