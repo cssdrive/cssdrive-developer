@@ -1,79 +1,66 @@
-<?php
-$user_id = NULL;
-$user_acf_prefix = get_the_author_meta('ID');
-$user_id_prefixed = $user_acf_prefix . $user_id;
+<?php get_header();
 	
-get_header();
+	$user_id = NULL;
+	$user_acf_prefix = get_the_author_meta('ID');
+	$user_id_prefixed = $user_acf_prefix . $user_id;
+	
+	$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 ?>
-
-<style type="text/css" media="screen">
-	.author-profile-card {
-    background: #eee;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-.author-photo {
-    float: left;
-    text-align: left;
-    padding: 5px;
-}
-</style>
-
-<?php $author_header = get_field( 'author_header', $user_id_prefixed ); ?>
-<?php if ( $author_header ) { ?>
-	<img class="uk-width-1-1" src="<?php echo $author_header['url']; ?>" alt="<?php echo $author_header['alt']; ?>" />
-<?php } ?>
-
-<div id="wrap">
 	
+	<!--  Background User Images
+  ============================================================ -->
 	
-</div><!-- #wrap -->
+	<?php $author_header = get_field( 'author_header', $user_id_prefixed ); ?>
+	<?php if ( $author_header ) { ?>
+		<img class="uk-width-1-1" src="<?php echo $author_header['url']; ?>" alt="<?php echo $author_header['alt']; ?>" />
+	<?php } ?>
 
-
-<?php
-// Set the Current Author Variable $curauth
-$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-?>
-
-    <?php echo $curauth->display_name; ?><br>
-		<?php echo $curauth->ID; ?><br>
-		<?php echo $curauth->jabber; ?><br>
-		<?php echo $curauth->user_email; ?><br>
-		<?php echo $curauth->user_registered; ?><br>
-		<?php echo $curauth->user_url; ?><br>
-		<?php echo $curauth->yim; ?><br>
-     
-<div class="author-profile-card">
-    <h2>About: <?php echo $curauth->nickname; ?></h2>
-    <div class="author-photo">
-    <?php echo get_avatar( $curauth->user_email , '90 '); ?>
-    </div>
-    <p><strong>Website:</strong> <a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a><br />
-    <strong>Bio:</strong> <?php echo $curauth->user_description; ?></p>
-</div>
-     
-<h2>Posts by <?php echo $curauth->nickname; ?>:</h2>
+  <!--  Main Page
+  ============================================================ -->
  
- 
-         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<h3>
-<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>">
-<?php the_title(); ?></a>
-</h3>
-<p class="posted-on">Posted on: <?php the_time('d M Y'); ?></p>
- 
-<?php the_excerpt(); ?>
- 
-<?php endwhile; 
- 
-// Previous/next page navigation.
-the_posts_pagination();
- 
- 
-else: ?>
-<p><?php _e('No posts by this author.'); ?></p>
- 
-<?php endif; ?>
+	<main id="main" role="main">	
+		<div uk-grid>
+			
+			<div class="uk-width-auto@s" style="width: 200px;">
+				<ul class="uk-list uk-list-divider">
+					<li> <?php echo get_avatar( $curauth->user_email, 100, '', '', array('class'=>'uk-border-circle', 'extra_attr'=>'style="  "')); ?></li>
+					<li><?php echo $curauth->display_name; ?></li>
+					<li><?php echo $curauth->nickname; ?></li>
+					<li>ID: <?php echo $curauth->ID; ?></li>
+					<li><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></li>
+					<li><?php echo $curauth->user_description; ?></li>
+					<li>Регистрация: <?php echo $curauth->user_registered; ?></li>
+				</ul>
+			</div><!-- LEFT -->
+			
+			<div class="uk-width-expand@s">				
+				<?php if ( have_posts() ) : ?>
+			
+					<!--  Content
+		      ============================================================ -->
+		      
+					<?php while ( have_posts() ) : the_post(); ?>		    
+			  		<?php get_template_part( 'parts/content', get_post_format() ); ?>		  
+					<?php endwhile; ?>
+					
+					<?php pagination(); ?>
+					
+				<?php else : ?>
+					
+					<!--  Empty Content
+		      ============================================================ -->
+		      
+					<?php get_template_part( 'parts/content', 'none' ); ?>
+					
+			  <?php endif; ?>
+			</div><!-- CENTER -->
+			
+			<!--  Sidebar
+			============================================================ -->
+			
+			<?php get_sidebar(); ?>
+			
+		</div><!-- uk-grid -->
+	</main><!-- #main -->
 
 <?php get_footer(); ?>
