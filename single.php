@@ -47,7 +47,7 @@
 					'category__in' => $category_ids,
 					'post__not_in' => array($post->ID),
 					'showposts'=>3,
-					'orderby'=>rand,
+					'orderby' => 'rand',
 					'caller_get_posts'=>1);
 					$my_query = new wp_query($args);
 					if( $my_query->have_posts() ) {
@@ -90,7 +90,7 @@
 					foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
 					$args=array(
 					'tag__in' => $tag_ids,       
-					'orderby'=>rand,                
+					'orderby' => 'rand',                
 					'caller_get_posts'=>1,            
 					'post__not_in' => array($post->ID),
 					'showposts'=>3                      
